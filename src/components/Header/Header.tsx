@@ -1,20 +1,30 @@
 import { useState } from "react";
 import CompanyLogo from "../../assets/company_logo.png";
+import { RxHamburgerMenu } from "react-icons/rx";
 
-const Header = () => {
+const Header = ({
+  handleSideMenuToggle,
+  isSidebarOpen,
+}: {
+  handleSideMenuToggle: () => void;
+  isSidebarOpen: boolean;
+}) => {
   const [isOpen, setIsOpen] = useState(false);
   const [isNotificationOpen, setIsNotificationOpen] = useState(false);
+
   return (
-    <header className="shadow-lg ">
+    <header className=" relative z-10  shadow-lg shadow-gray-200 bg-white">
       <div className="h-24 flex flex-row justify-between items-center">
-        <div className="px-4 py-2">
-          <a href="/" className="flex flex-row items-center ">
-            <img
-              className="h-24 w-24"
-              src={CompanyLogo}
-              alt="Comapany Logo"
-            ></img>
-            <span className="hidden font-light text-xl  md:block">Pheonix</span>
+        {/* Hamburger icon and logo in the same container */}
+        <div className="flex items-center space-x-1">
+          <span
+            className={`text-xl ml-7 transition-transform duration-300 ${isSidebarOpen ? "rotate-180" : "rotate-0"}`}
+          >
+            <RxHamburgerMenu onClick={handleSideMenuToggle} />
+          </span>
+          <a href="/" className="flex items-center">
+            <img className="h-24 w-24" src={CompanyLogo} alt="Company Logo" />
+            <span className="hidden text-xl font-bold md:block">Phoenix</span>
           </a>
         </div>
 
