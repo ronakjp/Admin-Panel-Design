@@ -20,6 +20,9 @@ export default {
         primary: {
           DEFAULT: "var(--dark-text-color)",
         },
+        appPrimary: {
+          DEFAULT: "var(--primary-color)",
+        },
       },
       fontFamily: {
         sans: ["Montserrat", "sans-serif"],

@@ -1,18 +1,17 @@
 import { LuLayoutDashboard } from "react-icons/lu";
-import { MdOutlineWidgets } from "react-icons/md";
-import { LiaElementor } from "react-icons/lia";
 import { CiViewTable } from "react-icons/ci";
 import { HiOutlineChartSquareBar } from "react-icons/hi";
+import { useLocation, useNavigate } from "react-router-dom";
+import { useEffect } from "react";
 
 const Sidebar = ({ isSidebarOpen }: { isSidebarOpen: boolean }) => {
   const menuItems = [
-    { icon: <LuLayoutDashboard />, name: "Dashboard" },
-    { icon: <MdOutlineWidgets />, name: "Widgets" },
-    { icon: <LiaElementor />, name: "Elementor" },
-    { icon: <CiViewTable />, name: "View Table" },
-    { icon: <HiOutlineChartSquareBar />, name: "Charts" },
-  ];
+    { icon: <LuLayoutDashboard />, name: "Dashboard", route: "dashboard" },
 
+    { icon: <CiViewTable />, name: "View Table", route: "view-table" },
+    { icon: <HiOutlineChartSquareBar />, name: "Charts", route: "charts" },
+  ];
+  const navigate = useNavigate();
   const eachSideBarMenuItemStyle = `flex 
   flex-row
   items-center
@@ -32,6 +31,11 @@ const Sidebar = ({ isSidebarOpen }: { isSidebarOpen: boolean }) => {
   overflow-hidden
   hover:font-semibold
   `;
+  const location = useLocation();
+
+  useEffect(() => {
+    console.log("location is ", location.pathname);
+  }, [location]);
 
   return (
     <div className="p-1 h-full ">
@@ -41,7 +45,16 @@ const Sidebar = ({ isSidebarOpen }: { isSidebarOpen: boolean }) => {
         }`}
       >
         {menuItems.map((eachMenu) => (
-          <li className={`${eachSideBarMenuItemStyle}`}>
+          <li
+            className={`${eachSideBarMenuItemStyle} ${
+              location.pathname === "/" + eachMenu.route
+                ? "bg-primary text-white font-semibold"
+                : ""
+            }`}
+            onClick={() => {
+              navigate(eachMenu.route);
+            }}
+          >
             <span className="mr-4 ">
               <span className="text-xl ">{eachMenu.icon}</span>
             </span>
