@@ -1,5 +1,7 @@
+import GridLayout from "./GridLayout";
+
 const Container = () => {
-  return <div>Container</div>;
+  return <GridLayout />;
 };
 
 export default Container;

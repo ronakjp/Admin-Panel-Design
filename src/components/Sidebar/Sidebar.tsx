@@ -30,12 +30,13 @@ const Sidebar = ({ isSidebarOpen }: { isSidebarOpen: boolean }) => {
   font-light
   text-nowrap
   overflow-hidden
+  hover:font-semibold
   `;
 
   return (
     <div className="p-1 h-full ">
       <ul
-        className={` inline-block mt-3 transition-width duration-500 ease-in-out  ${
+        className={` inline-block mt-3 transition-width duration-500 ease-in-out ${
           isSidebarOpen ? "w-60" : "w-20"
         }`}
       >
