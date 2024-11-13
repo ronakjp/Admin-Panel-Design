@@ -14,17 +14,65 @@ html,
 body {
   /* Applying the global text color  */
   @apply text-primary;
-  height: 100%;
+  /* height: 100%; */
   font-family: "Montserrat", sans-serif; /* Or any preferred font */
+  background-color: #f5f7ff;
+  margin: 0;
+  padding: 0;
 }
 
 :root {
-  --primary-color: #4b49ac;
+  --primary-color: hsl(241, 40%, 48%);
   --secondary-color: #98bdff;
+  --tertiary-color: hsl(241, 70%, 65%);
+  --tertiaryHoverColor: hsl(241, 70%, 57%);
+  --tertiaryFocusColor: hsl(241, 70%, 49%);
+  --primaryHoverColor: hsl(241, 40%, 43%);
+  --primaryFocusColor: hsl(241, 40%, 38%);
+
   --background-color: #f5f7ff;
 
   --dark-text-color: #333333; /* (very dark gray)*/
   --light-text-color: #2d2d2d; /* (slightly lighter)*/
   --font-size-large: 1.25rem; /* 20px */
   --spacing-large: 2rem; /* 32px */
+}
+
+h1 {
+  @apply text-xl  md:text-2xl font-semibold mb-1;
+}
+
+h2 {
+  @apply text-lg md:text-xl font-semibold mb-1;
+}
+
+h3 {
+  @apply text-base md:text-lg  mb-1;
+}
+
+h4 {
+  @apply text-sm  md:text-base  mb-1;
+}
+
+h5 {
+  @apply text-xs md:text-sm  mb-1;
+}
+
+h6 {
+  @apply hidden md:text-xs md:inline  mb-1;
+}
+
+/* Primary Button */
+.btn-primary {
+  @apply p-1 md:p-2 lg:p-3 border border-primary rounded-lg md:rounded-xl lg:rounded-2xl shadow-lg active:shadow-none bg-primary font-semibold text-sm md:text-base lg:text-lg hover:bg-primaryHoverColor text-secondary transition-colors ease-in-out duration-500;
+}
+
+/* Secondary Button */
+.btn-secondary {
+  @apply p-1 md:p-2 lg:p-3 border border-gray-100 rounded-lg md:rounded-xl lg:rounded-2xl shadow-md active:shadow-none text-appPrimary font-semibold text-sm md:text-base lg:text-lg;
+}
+
+/* Tertiary Button */
+.btn-tertiary {
+  @apply p-1 md:p-2 lg:p-3 rounded-lg md:rounded-xl lg:rounded-2xl font-medium text-tertiary text-sm md:text-base lg:text-lg hover:text-tertiaryHoverColor;
 }

@@ -5,7 +5,7 @@ export default {
     extend: {
       colors: {
         primary: {
-          DEFAULT: "var(--primary-color)", // Default shade for `primary`
+          DEFAULT: "var(--primary-color)",
         },
         secondary: {
           DEFAULT: "var(--secondary-color)",
@@ -14,11 +14,23 @@ export default {
         background: {
           DEFAULT: "var(--background-color)",
         },
+
+        primaryHoverColor: "var(--primaryHoverColor)",
+        primaryFocusColor: "var(--primaryFocusColor)",
+        tertiary: "var(--tertiary-color)",
+        tertiaryHoverColor: "var(--tertiaryHoverColor)",
+        tertiaryFocusColor: "var(--tertiaryFocusColor)",
       },
       // Text primary
       textColor: {
         primary: {
           DEFAULT: "var(--dark-text-color)",
+        },
+        secondary: {
+          DEFAULT: "white",
+        },
+        tertiary: {
+          DEFAULT: "var(--tertiary-color)",
         },
         appPrimary: {
           DEFAULT: "var(--primary-color)",

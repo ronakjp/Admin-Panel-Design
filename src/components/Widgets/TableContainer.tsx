@@ -8,32 +8,44 @@ const TableContainer = ({
     weight: string;
   };
 }) => {
+  const tableContainerHeadingStyle = "font-thin text-xs p-1";
+
+  const tableContainerInformationStyle = "pb-1 pl-1 text-wrap";
+
+  const tableContainerStyle = "grid grid-cols-4 text-gray-700";
+
   return (
     <tr className="bg-background ">
       <td colSpan={6}>
-        <div className="grid grid-cols-4 text-gray-700">
+        <div className={tableContainerStyle}>
           <div className="p-2 pl-5">
-            <div className="font-thin text-xs p-1">Description: </div>
-            <div className="pb-1 pl-1 text-wrap">
+            <div className={tableContainerHeadingStyle}>Description: </div>
+            <div className={tableContainerInformationStyle}>
               {" "}
               {productDetails.description}
             </div>
           </div>
           <div className="p-2">
-            <div className="font-thin text-xs p-1">Release Date: </div>
-            <div className="pb-1 pl-1 text-wrap">
+            <div className={tableContainerHeadingStyle}>Release Date: </div>
+            <div className={tableContainerInformationStyle}>
               {" "}
               {productDetails.releaseDate}
             </div>
           </div>
 
           <div className="p-2">
-            <div className="font-thin text-xs p-1">SKU: </div>
-            <div className="pb-1 pl-1 text-wrap"> {productDetails.sku}</div>
+            <div className={tableContainerHeadingStyle}>SKU: </div>
+            <div className={tableContainerInformationStyle}>
+              {" "}
+              {productDetails.sku}
+            </div>
           </div>
           <div className="p-2">
-            <div className="font-thin text-xs p-1">Weight: </div>
-            <div className="pb-1 pl-1 text-wrap"> {productDetails.weight}</div>
+            <div className={tableContainerHeadingStyle}>Weight: </div>
+            <div className={tableContainerInformationStyle}>
+              {" "}
+              {productDetails.weight}
+            </div>
           </div>
 
           {/* <div className="">

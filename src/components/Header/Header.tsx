@@ -13,12 +13,12 @@ const Header = ({
   const [isNotificationOpen, setIsNotificationOpen] = useState(false);
 
   return (
-    <header className=" relative z-10  shadow-lg shadow-gray-200 bg-white">
+    <header className="shadow-lg shadow-gray-200 bg-white fixed top-0 left-0 right-0 w-full z-50 ">
       <div className="h-24 flex flex-row justify-between items-center">
         {/* Hamburger icon and logo in the same container */}
         <div className="flex items-center space-x-1">
           <span
-            className={`text-xl ml-7 transition-transform duration-300 ${isSidebarOpen ? "rotate-180" : "rotate-0"}`}
+            className={`sm:hidden text-xl ml-7 transition-transform duration-300 ${isSidebarOpen ? "rotate-180" : "rotate-0"}`}
           >
             <RxHamburgerMenu onClick={handleSideMenuToggle} />
           </span>
@@ -73,7 +73,7 @@ const Header = ({
           {/* Profile Avatar Right Side */}
           <div className="relative">
             <img
-              className="h-10 w-10 rounded-full"
+              className="h-10 w-10 rounded-full border border-primary"
               src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
               alt="profile image"
               onClick={() => setIsOpen(!isOpen)}
