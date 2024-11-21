@@ -8,7 +8,7 @@ interface Stat {
 interface ChartCardProps {
   title: string;
   description: string;
-  stats: Stat[];
+  stats?: Stat[];
   children: ReactNode;
 }
 
@@ -27,14 +27,16 @@ const ChartCard: React.FC<ChartCardProps> = ({
       <h5 className="mb-8 ">{description}</h5>
 
       {/* Stats Grid */}
-      <div className="grid grid-cols-4 justify-start items-center ">
-        {stats.map((stat, index) => (
-          <div className="flex flex-col" key={index}>
-            <h5 className="text-gray-400">{stat.label}</h5>
-            <h2 className=" text-[#4b49ac]">{stat.value}</h2>
-          </div>
-        ))}
-      </div>
+      {stats && (
+        <div className="grid grid-cols-4 justify-start items-center ">
+          {stats.map((stat, index) => (
+            <div className="flex flex-col" key={index}>
+              <h5 className="text-gray-400">{stat.label}</h5>
+              <h2 className=" text-[#4b49ac]">{stat.value}</h2>
+            </div>
+          ))}
+        </div>
+      )}
 
       {/* Chart */}
       <div className="">{children}</div>

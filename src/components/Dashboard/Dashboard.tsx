@@ -6,7 +6,7 @@ import SalesSummary from "../Widgets/SalesSummary";
 import { HiChartSquareBar, HiDocumentText } from "react-icons/hi";
 import { IoIosPricetag } from "react-icons/io";
 import { TiUserAdd } from "react-icons/ti";
-import TrafficChannelPieChart from "../Widgets/TrafficChannelPiechart";
+import TrafficChannelPieChart from "../Widgets/TrafficChannelPieChart";
 
 const Dashboard = () => {
   const orderStats = [
@@ -51,18 +51,27 @@ const Dashboard = () => {
   return (
     <>
       <GridContainer columns="grid-cols-1" className="lg:grid-cols-4">
-        <Card className=" ">
-          <TrafficChannelPieChart />
-        </Card>
-        <Card className="col-span-1 lg:col-span-3 ">
+        <Card className="col-span-1 lg:col-span-2 ">
           <SalesSummary
             stats={statsData}
             title="Monthly Overview"
             subtitle="Summary"
           />
         </Card>
+        <Card className=" col-span-1  lg:col-span-2 ">
+          <ChartCard
+            title="Channels Breakdown"
+            description="The total number of sessions within the date range. It is the period time a user is actively engaged with your website, page or app, etc"
+          >
+            <TrafficChannelPieChart />
+          </ChartCard>
+        </Card>
 
-        <Card className="col-span-1 lg:col-span-3 ">
+        <Card className=" col-span-1  lg:col-span-2 ">
+          <div></div>
+        </Card>
+
+        <Card className="col-span-1 lg:col-span-2 ">
           <ChartCard
             title="Order Details"
             description="The total number of sessions within the date range. It is the period time a user is actively engaged with your website, page or app, etc"

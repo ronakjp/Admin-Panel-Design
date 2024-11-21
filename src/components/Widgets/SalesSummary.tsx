@@ -2,6 +2,7 @@ import React from "react";
 import { PiExportBold } from "react-icons/pi";
 import StatCard from "../Common/StatCard";
 import { IconType } from "react-icons";
+import GridContainer from "../Common/GridContainer";
 
 interface StatData {
   icon: IconType;
@@ -42,7 +43,11 @@ const SalesSummary: React.FC<SalesSummaryProps> = ({
         )}
       </div>
 
-      <div className="grid lg:grid-cols-4 md:grid-cols-2 sm:grid-cols-1 justify-items-center items-center gap-x-5 gap-y-3 p-3">
+      {/* <div className="grid lg:grid-cols-4 md:grid-cols-2 sm:grid-cols-1 justify-items-center items-center gap-x-5 gap-y-3 p-3"> */}
+      <GridContainer
+        columns="grid-cols-2"
+        className="justify-items-center items-center"
+      >
         {stats.map((stat, index) => (
           <StatCard
             key={index}
@@ -54,7 +59,7 @@ const SalesSummary: React.FC<SalesSummaryProps> = ({
             growth={stat.growth}
           />
         ))}
-      </div>
+      </GridContainer>
     </>
   );
 };
